@@ -12,6 +12,15 @@ class Scrabble
     end.reduce(:+) * word_multiplier
   end
 
+  def highest_scoring_word(word_array)
+    highest_word = word_array[1]
+    word_array.each do |word|
+      highest_word = word if score(word) > score(highest_word)
+      highest_word = word if score(word) == score(highest_word) && word.length < highest_word.length
+      highest_word = word if score(word) == score(highest_word) && word.length == 7
+    end
+    highest_word
+  end
 
   def point_values
     {
