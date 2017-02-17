@@ -6,6 +6,13 @@ class Scrabble
     end.reduce(:+)
   end
 
+  def score_with_multipliers(word, letter_multiplier, word_multiplier = 1)
+    word.upcase.chars.each_with_index.map do |letter, index|
+      point_values[letter] * letter_multiplier[index]
+    end.reduce(:+) * word_multiplier
+  end
+
+
   def point_values
     {
       "A"=>1, "B"=>3, "C"=>3, "D"=>2,
