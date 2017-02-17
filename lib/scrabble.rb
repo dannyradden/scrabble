@@ -7,9 +7,12 @@ class Scrabble
   end
 
   def score_with_multipliers(word, letter_multiplier, word_multiplier = 1)
-    word.upcase.chars.each_with_index.map do |letter, index|
+    final_score = word.upcase.chars.each_with_index.map do |letter, index|
       point_values[letter] * letter_multiplier[index]
-    end.reduce(:+) * word_multiplier
+    end.reduce(:+)
+    final_score += 10 if word.length == 7
+    final_score *= word_multiplier
+    final_score
   end
 
   def highest_scoring_word(word_array)

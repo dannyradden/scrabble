@@ -28,6 +28,7 @@ class ScrabbleTest < Minitest::Test
 
   def test_letter_and_word_multiplier
     assert_equal 18, Scrabble.new.score_with_multipliers('hello', [1,1,2,1,1], 2)
+    assert_equal 58, Scrabble.new.score_with_multipliers('sparkle', [1,2,1,3,1,2,1], 2)
   end
 
   def test_highest_scoring_word
