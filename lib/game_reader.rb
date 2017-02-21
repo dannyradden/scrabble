@@ -1,3 +1,3 @@
 class GameReader
-
+  initialize()
 end

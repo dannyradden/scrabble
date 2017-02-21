@@ -21,16 +21,6 @@ class WordListTest < Minitest::Test
 
   end
 
-  def test_head
-    list = WordList.new
-    list.add('hello')
-    list.add('quarter')
-    list.add('table')
-    list.add('board')
-
-    assert_equal 'board', list.head
-  end
-
   def test_total_score
     list = WordList.new
     list.add('hello')
@@ -45,17 +35,17 @@ class WordListTest < Minitest::Test
 
     list.add("hello")
     assert_equal 1, list.count       # => 1
-    # assert_equal 8, list.head.score  # => 8
+    assert_equal 8, list.head.score  # => 8
     assert_equal 8, list.total_score # => 8
 
     list.add("hi")
     assert_equal 2, list.count       # => 2
-    # assert_equal 5, list.head.score  # => 5
+    assert_equal 5, list.head.score  # => 5
     assert_equal 13,list.total_score # => 13
 
     list.add("snacker")
     assert_equal 3, list.count       # => 3
-    # assert_equal 13, list.head.score  # => 13
+    assert_equal 13, list.head.score  # => 13
     assert_equal 26, list.total_score # => 26
   end
 end

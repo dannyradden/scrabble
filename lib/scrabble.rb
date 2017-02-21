@@ -16,7 +16,7 @@ class Scrabble
   end
 
   def highest_scoring_word(word_array)
-    highest_word = word_array[1]
+    highest_word = word_array[0]
     word_array.each do |word|
       highest_word = word if score(word) > score(highest_word)
       highest_word = word if score(word) == score(highest_word) && word.length < highest_word.length

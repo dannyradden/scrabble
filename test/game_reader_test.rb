@@ -5,5 +5,5 @@ require 'minitest/pride'
 require 'pry'
 
 class GameReaderTest < Minitest::Test
-
+  
 end
